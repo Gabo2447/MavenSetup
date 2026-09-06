@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<!DOCTYPE module PUBLIC
+  "-//Checkstyle//DTD Checkstyle Configuration 1.3//EN"
+  "https://checkstyle.org/dtds/configuration_1_3.dtd">
+
+<module name="Checker">
+  <module name="SuppressWarningsFilter"/>
+  <module name="JavadocPackage"/>
+
+  <!-- Test Exclusion -->
+  <module name="SuppressionSingleFilter">
+    <property name="files" value="^.*src[\\/]test[\\/]java[\\/].*(IT|Test|Fixture|Mock)\.java$"/>
+    <property name="checks" value="Javadoc|Name"/>
+  </module>
+
+  <module name="TreeWalker">
+    <property name="tabWidth" value="4"/>
+
+    <!-- Annotations -->
+    <module name="AnnotationLocation">
+      <property name="allowSamelineMultipleAnnotations" value="false"/>
+      <property name="allowSamelineSingleParameterlessAnnotation" value="false"/>
+      <property name="allowSamelineParameterizedAnnotation" value="false"/>
+    </module>
+    <module name="AnnotationUseStyle"/>
+    <module name="MissingDeprecated"/>
+    <module name="MissingOverride"/>
+    <module name="SuppressWarningsHolder"/>
+
+    <!-- Block Checks -->
+    <module name="AvoidNestedBlocks"/>
+    <module name="EmptyBlock"/>
+    <module name="EmptyCatchBlock"/>
+    <module name="LeftCurly"/>
+    <module name="NeedBraces"/>
+    <module name="RightCurly"/>
+
+    <!-- Imports -->
+    <module name="ImportOrder">
+      <property name="groups" value="*,javax,java"/>
+      <property name="ordered" value="true"/>
+      <property name="separated" value="true"/>
+      <property name="option" value="bottom"/>
+      <property name="sortStaticImportsAlphabetically" value="true"/>
+    </module>
+
+    <!-- Naming -->
+    <module name="ParameterName">
+      <property name="format" value="^[a-z][a-zA-Z]+$"/>
+    </module>
+    <module name="MemberName">
+      <property name="format" value="^[a-z][a-zA-Z]+$"/>
+    </module>
+    <module name="MethodTypeParameterName">
+      <property name="format" value="^[A-Z]$"/>
+    </module>
+    <module name="LocalFinalVariableName">
+      <property name="format" value="^[a-z][a-zA-Z]+$"/>
+    </module>
+    <module name="SuppressionXpathSingleFilter">
+      <property name="checks" value="LocalFinalVariableName"/>
+      <!-- Matches every identifier 'e' inside any 'catch' clause -->
+      <property name="query" value="//LITERAL_CATCH//descendant::IDENT[@text='e']"/>
+    </module>
+    <module name="CatchParameterName"/>
+    <module name="ConstantName">
+      <property name="format" value="^[A-Z]+(_[A-Z]+)*$"/>
+    </module>
+
+    <!-- Javadocs -->
+    <module name="JavadocLeadingAsteriskAlign"/>
+    <module name="JavadocMissingLeadingAsterisk"/>
+    <module name="JavadocMissingWhitespaceAfterAsterisk"/>
+    <module name="JavadocType"/>
+    <module name="JavadocVariable"/>
+    <module name="MissingJavadocPackage"/>
+    <module name="MissingJavadocMethod"/>
+    <module name="MissingJavadocType"/>
+    <module name="RequireEmptyLineBeforeBlockTagGroup"/>
+
+    <!-- Modifiers -->
+    <module name="ModifierOrder"/>
+
+    <!-- Whitespace -->
+    <module name="EmptyForInitializerPad"/>
+    <module name="EmptyForIteratorPad"/>
+    <module name="EmptyLineSeparator">
+      <property name="allowMultipleEmptyLines" value="false"/>
+      <property name="allowMultipleEmptyLinesInsideClassMembers" value="false"/>
+    </module>
+    <module name="GenericWhitespace"/>
+    <module name="MethodParamPad"/>
+    <module name="NoLineWrap"/>
+    <module name="NoWhitespaceAfter"/>
+    <module name="NoWhitespaceBefore"/>
+    <module name="NoWhitespaceBeforeCaseDefaultColon"/>
+    <module name="OperatorWrap"/>
+    <module name="ParenPad"/>
+    <module name="SeparatorWrap">
+      <property name="id" value="SeparatorWrapDot"/>
+      <property name="tokens" value="DOT"/>
+      <property name="option" value="nl"/>
+    </module>
+    <module name="SeparatorWrap">
+      <property name="id" value="SeparatorWrapComma"/>
+      <property name="tokens" value="COMMA"/>
+      <property name="option" value="eol"/>
+    </module>
+    <module name="SingleSpaceSeparator"/>
+    <module name="TypecastParenPad"/>
+    <module name="WhitespaceAfter"/>
+    <module name="WhitespaceAround"/>
+
+    <!-- Own custom rules -->
+    <module name="RegexpSinglelineJava">
+      <property name="format" value="\t"/>
+      <property name="message" value="Indent must use space characters"/>
+    </module>
+    <module name="RegexpSinglelineJava">
+      <property name="id" value="NullabilityFinal"/>
+      <property name="format" value="\bfinal\s+@(NotNull|Nullable)\b"/>
+      <property name="message" value="Nullability annotations must be placed before the final modifier"/>
+    </module>
+  </module>
+
+  <!-- Whitespace -->
+  <!-- <module name="FileTabCharacter"/> -->
+</module>
