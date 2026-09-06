@@ -41,6 +41,8 @@ jobs:
     name: Build main branch
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main' && github.repository == 'Gabo2447/MavenSetup'
+    permissions:
+      contents: write
     outputs:
       release-version: ${{ steps.set-version.outputs.release-version }}
     steps:
