@@ -74,6 +74,13 @@
             <url>https://repo-soulbound.up.railway.app/releases</url>
         </pluginRepository>
     </pluginRepositories>
+    <distributionManagement>
+        <repository>
+            <id>reposilite-soulbound</id>
+            <name>Reposilite Repository</name>
+            <url>https://repo-soulbound.up.railway.app/releases</url>
+        </repository>
+    </distributionManagement>
     <dependencies>
         <dependency>
             <groupId>org.jetbrains</groupId>

@@ -59,7 +59,7 @@ jobs:
           distribution: temurin
           java-version: ${{ steps.determine-java-version.outputs.java_major_version }}
           cache: 'maven'
-          server-id: soulbound-releases
+          server-id: reposilite-soulbound
           server-username: MAVEN_SERVER_USERNAME
           server-password: MAVEN_SERVER_PASSWORD
       - name: Read revision version from pom.xml
