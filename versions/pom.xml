@@ -7,7 +7,7 @@
     <groupId>io.zabrek.parent</groupId>
     <artifactId>versions</artifactId>
     <packaging>pom</packaging>
-    <version>2.0.0</version>
+    <version>${revision}</version>
 
     <name>Versions</name>
     <description>All default maven versions</description>
@@ -23,7 +23,7 @@
 
     <properties>
         <!--  project version  -->
-        <revision>2.0.0</revision>
+        <revision>2.0.1</revision>
         <changelist>-SNAPSHOT</changelist>
 
         <!--  project settings  -->

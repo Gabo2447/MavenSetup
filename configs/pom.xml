@@ -7,7 +7,7 @@
     <parent>
         <groupId>io.zabrek.parent</groupId>
         <artifactId>versions</artifactId>
-        <version>2.0.0</version>
+        <version>${revision}</version>
         <relativePath>../versions/pom.xml</relativePath>
     </parent>
 
@@ -17,7 +17,7 @@
 
     <properties>
         <!--  project version  -->
-        <revision>2.0.0</revision>
+        <revision>2.0.1</revision>
         <changelist>-SNAPSHOT</changelist>
     </properties>
 
