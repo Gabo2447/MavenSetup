@@ -70,7 +70,7 @@
     </modules>
     <pluginRepositories>
         <pluginRepository>
-            <id>reposilite-soulbound</id>
+            <id>soulbound-releases</id>
             <url>https://repo-soulbound.up.railway.app/releases</url>
         </pluginRepository>
     </pluginRepositories>
